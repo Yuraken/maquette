@@ -1,14 +1,26 @@
 <!DOCTYPE html>
-<htmllang="en">
+<html lang="en">
     <head>
-        <metacharset="UTF-8" />
+        <meta charset="UTF-8" />
         <title>Webpack demo</title>
     </head>
     <body>
-        <form id="loginForm">
-            <input type="text" value="" name="email">
-            <input type="password" value="" name="password">
-            <input type="submit" value="Envoyer">
-        </form>
+        <div class="container">
+            <form id="loginForm">
+                <h2>Accès à mon espace personnel</h2>
+                <p>Connectez vous pour acceder à tout votre espace personnel</p>
+                <div class="champ">
+                    <label for="email">Nom d'utilisateur</label>
+                    <input type="text" value="" name="email">
+                </div>
+                <div class="champ" id="pass">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" value="" name="password">
+                </div>
+                <input type="submit" value="Se connecter">
+                <a href="#">Mot de passe oublié ?</a>
+            </form>
+        </div>
+        
     </body>
 </html>

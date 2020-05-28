@@ -1,5 +1,6 @@
 import moment from'moment'
 import './style.css';
+import Icon from './icon.png'
 
 moment.locale('fr')
 const message = document.createElement('p');
@@ -33,3 +34,25 @@ const password = 'qwerty'
                 message.innerHTML = "Bon mot de passe !"
             }
         }
+
+      
+   const myIcon = new Image();
+   const image = document.querySelector('#pass');
+   myIcon.id = "Eye";
+   myIcon.src = Icon;
+   console.log(image);
+  
+   image.appendChild(myIcon);
+
+  
+
+   const showpassword = e =>{
+    var pass = document.querySelector('[name="password"]');
+    if (pass.type === "password") {
+      pass.type = "text";
+    } else {
+      pass.type = "password";
+    }
+    } 
+
+    document.querySelector('#Eye').addEventListener('click',showpassword)
