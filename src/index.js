@@ -5,7 +5,7 @@ import Icon from './icon.png'
 moment.locale('fr')
 const message = document.createElement('p');
 
-document.body.appendChild(message);
+document.querySelector(".champWarn").appendChild(message);
 
 
 const email = 'hello@lp.wd'
@@ -26,18 +26,56 @@ const password = 'qwerty'
         document.querySelector('#loginForm').addEventListener('submit',onLoginFormSubmit)
 
         const processDataForm = data => {
+
+          var path = window.location.pathname;
+          var page = path.split("/").pop();
+          console.log(page)
+          if(page === "connexion.html"){
+           if(data.get('password').length < 6){
+              message.innerHTML = "Mot de passe trop court ! Minimum 6 caractères !"
+           }
+           else{
+             if(data.get('email').length === 0){
+              message.innerHTML = "Veuillez renseigné un nom d'utilisateur !"
+             }
+             else{
+              var today = new Date();
+              var dd = String(today.getDate()).padStart(2, '0');
+              var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+              var yyyy = today.getFullYear();
+              
+              today = yyyy + '-' + mm + '-' + dd;
+              var date = data.get('date');
+
+               console.log(date)
+               console.log(today)
+
+               if(date>today){
+                message.innerHTML = "Date incorrecte !"
+               }
+               else{
+                
+                message.innerHTML = "Compte créer avec succès !"
+
+               }
+               
+             }
+           }
+
+          }else{
             console.log(data.get('password')); 
             if (data.get('password') !== password || data.get('email') !== email ){
-                message.innerHTML = "Mot de passe incorrect !"  
+                message.innerHTML = "Nom de compte ou mot de passe incorrect !"  
             } else {
-                
-                message.innerHTML = "Bon mot de passe !"
+                message.innerHTML = "Bienvenue "+email+ "!"
             }
+          }
+            
         }
 
       
    const myIcon = new Image();
-   const image = document.querySelector('#pass');
+   const image = document.querySelector('#labelpass');
    myIcon.id = "Eye";
    myIcon.src = Icon;
    console.log(image);
@@ -46,13 +84,17 @@ const password = 'qwerty'
 
   
 
-   const showpassword = e =>{
+  const showpassword = e =>{
     var pass = document.querySelector('[name="password"]');
+
     if (pass.type === "password") {
       pass.type = "text";
     } else {
       pass.type = "password";
     }
-    } 
+  }
+  
 
-    document.querySelector('#Eye').addEventListener('click',showpassword)
+    
+    document.querySelector('#Eye').addEventListener('mouseenter',showpassword)
+    document.querySelector('#Eye').addEventListener('mouseout',showpassword)

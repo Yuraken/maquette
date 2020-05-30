@@ -1,7 +1,7 @@
 body{
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Roboto', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: #F18A05;
+  background-color: #ffa726;
 }
 
 .container{
@@ -19,7 +19,7 @@ body{
   align-items: center;
   display: flex;
   flex-direction: column;
-  height:40vh;
+  height:60vh;
   width: 50vw;
   box-shadow: 5px 5px 30px black; 
   border-radius: 30px;
@@ -27,12 +27,23 @@ body{
 
 }
 
-#loginForm>a{
-  font-size: medium;
-  color: #F18A05;
+#signUpForm{
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height:60vh;
+  width: 50vw;
+  box-shadow: 5px 5px 30px black; 
+  border-radius: 30px;
+  font-size: large;
+
 }
 
+
+
 .champ{
+  margin-top: 2%;
   height: 60px;
   display: flex;
   flex-direction: column;
@@ -41,14 +52,13 @@ body{
 }
 
 .champ>label{
-  color: #F18A05;
+  color: #c77800;
 }
 
-.champ>img{
+label>img{
   height: 5%;
   position: absolute;
-  right: 30%;
-  bottom: 26%;
+  margin-left: 1%;
 }
 
 input[type=text], input[type=password] {
@@ -65,11 +75,17 @@ input:focus{
 }
 
 input[type=submit]{
-  background-color: #F18A05;
+  margin-top: 5%;
+  background-color: #ffa726;
   border: none;
   border-radius: 20px;
   height: 5vh;
   width: 15vw;
   color: whitesmoke;
   font-size: large;
+}
+
+a{
+  font-size: medium;
+  color: #c77800;
 }

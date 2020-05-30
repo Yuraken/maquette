@@ -34,6 +34,11 @@ module.exports = {
                     inject: true,
                     filename: 'index.html'  
                 }),
+                new HtmlWebpackPlugin({
+                  template: './src/connexion.html',
+                  inject: true,
+                  filename: 'connexion.html'  
+              }),
                 new MiniCssExtractPlugin(),
             ],
       devServer: {

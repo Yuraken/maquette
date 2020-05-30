@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Création de compte</title>
+    </head>
+    <body>
+        <div class="container">
+            <form id="loginForm">
+                <h2>Création de compte</h2>
+                <p>Créez-vous un compte pour accéder à votre espace personnel.</p>
+                <div class="champ">
+                    <label for="email">Nom d'utilisateur*</label>
+                    <input type="text" value="" name="email">
+                </div>
+                <div class="champ" id="pass">
+                    <label for="password" id="labelpass">Mot de passe*</label>
+                    <input type="password" value="" name="password">
+                </div>
+                <div class="champ">
+                    <label for="date">Date de naissance</label>
+                    <input type="date" value="" name="date">
+                </div>
+                <div class="champ">
+                    <label for="story">Signature personnel:</label>
+                    <textarea id="story" name="story" rows="" cols="33"></textarea>
+                </div>
+                <div class="champWarn"></div>
+                <input type="submit" value="Créer mon compte">
+                <p>Vous avez déjà un compte ? <a href="index.html">Cliquez ici.</a></p>
+                
+            </form>
+        </div>
+        
+    </body>
+</html>
